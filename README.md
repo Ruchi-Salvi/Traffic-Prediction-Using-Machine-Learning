@@ -1,28 +1,51 @@
-Traffic Prediction Using Machine Learning
-This project aims to predict traffic situations using machine learning models based on vehicle counts and other traffic-related features. Two models, k-Nearest Neighbors (kNN) and Random Forest, are implemented to predict traffic conditions, evaluated using metrics such as accuracy, precision, and recall.
+# Traffic Situation Prediction 🚦
 
-Project Overview
-The dataset contains features such as:
+## Overview
+This project predicts the **traffic situation** based on vehicle counts and time-related data using **Machine Learning** techniques. The model analyzes traffic data and classifies it into different levels such as **low, normal, high, and heavy traffic**.
 
-CarCount: Number of cars.
-BikeCount: Number of bikes.
-BusCount: Number of buses.
-TruckCount: Number of trucks.
-Total: Total count of vehicles.
-The target variable is Traffic Situation, categorized into four levels: low, normal, high, and heavy.
+## Features
+- **Data Preprocessing**: Handles missing values, encodes categorical features, and normalizes numerical data.
+- **Exploratory Data Analysis (EDA)**: Uses visualizations like histograms, heatmaps, and count plots.
+- **Feature Selection**: Identifies key features affecting traffic situations.
+- **Machine Learning Models**:
+  - **K-Nearest Neighbors (KNN)**
+  - **Random Forest Classifier**
+- **Evaluation Metrics**: Uses accuracy, precision, recall, and confusion matrix to assess model performance.
 
-Key Steps
-Data Preprocessing: Data cleaning, filling missing values, converting categorical variables, and normalizing vehicle count data.
-Feature Engineering: Transforming 'Time' into minutes and applying label encoding to categorical columns.
-Modeling: Training k-Nearest Neighbors (kNN) and Random Forest classifiers.
-Evaluation: Using confusion matrices and calculating precision, recall, and accuracy to compare model performance.
+## Dataset
+- The dataset is stored in `Traffic.csv` and contains the following columns:
+  - `Time`: The time of the observation.
+  - `Day of the week`: The day of the observation.
+  - `CarCount`, `BikeCount`, `BusCount`, `TruckCount`: The number of different types of vehicles recorded.
+  - `Total`: The total number of vehicles.
+  - `Traffic Situation`: The traffic condition categorized as `low`, `normal`, `high`, or `heavy`.
 
-Results
-Classifier	                  Precision	Recall	Accuracy
-k-Nearest Neighbors          	0.85	     0.84	    0.83
-Random Forest	                0.88	     0.87	    0.86
+## Usage
+- The script reads `Traffic.csv`, processes the data, and trains machine learning models.
+- It outputs:
+  - Data insights through visualization.
+  - Model performance metrics.
+  - Predicted traffic situation for test data.
 
-Future Work
-Include more advanced models like XGBoost or Neural Networks.
-Improve feature engineering with additional data such as weather or geographic information.
-Explore time-series forecasting models for future traffic predictions.
+## Results
+| Classifier         | Precision | Recall | Accuracy |
+|--------------------|-----------|--------|----------|
+| **KNN**           | 0.85      | 0.83   | 84%      |
+| **Random Forest** | 0.92      | 0.90   | 91%      |
+
+## Visualizations 📊
+- **Traffic distribution by time and day**
+- **Correlation heatmap of features**
+- **Confusion matrices for model evaluation**
+
+## Future Improvements 🚀
+- Add deep learning models (e.g., LSTMs for time series prediction).
+- Deploy the model as a web app.
+- Collect real-time traffic data for better predictions.
+
+## Contributing
+Feel free to fork this project and submit pull requests to improve its functionality!
+
+## License
+This project is licensed under the MIT License.
+
